@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E30C086D1AA6832100E44EF9 /* BoardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C086C1AA6832100E44EF9 /* BoardCollectionCell.swift */; };
+		E31544BA1A8C335F000C78EE /* HousieBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31544B91A8C335F000C78EE /* HousieBoard.swift */; };
+		E3C150541AD731210019262E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C150531AD731210019262E /* ScanViewController.swift */; };
+		E3C3506C1A8C0DC1004F01AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3506B1A8C0DC1004F01AF /* AppDelegate.swift */; };
+		E3C3506E1A8C0DC1004F01AF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3506D1A8C0DC1004F01AF /* FirstViewController.swift */; };
+		E3C350701A8C0DC1004F01AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C3506F1A8C0DC1004F01AF /* SecondViewController.swift */; };
+		E3C350731A8C0DC1004F01AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C350711A8C0DC1004F01AF /* Main.storyboard */; };
+		E3C350751A8C0DC1004F01AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C350741A8C0DC1004F01AF /* Images.xcassets */; };
+		E3C350781A8C0DC1004F01AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C350761A8C0DC1004F01AF /* LaunchScreen.xib */; };
+		E3C350841A8C0DC1004F01AF /* Housie_BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C350831A8C0DC1004F01AF /* Housie_BoardTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3C3507E1A8C0DC1004F01AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3C3505E1A8C0DC1004F01AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3C350651A8C0DC1004F01AF;
+			remoteInfo = "Housie Board";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E30C086C1AA6832100E44EF9 /* BoardCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionCell.swift; sourceTree = "<group>"; };
+		E31544B91A8C335F000C78EE /* HousieBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HousieBoard.swift; sourceTree = "<group>"; };
+		E3C150531AD731210019262E /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		E3C350661A8C0DC1004F01AF /* Housie Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Housie Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C3506A1A8C0DC1004F01AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C3506B1A8C0DC1004F01AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3C3506D1A8C0DC1004F01AF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E3C3506F1A8C0DC1004F01AF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E3C350721A8C0DC1004F01AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3C350741A8C0DC1004F01AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E3C350771A8C0DC1004F01AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E3C3507D1A8C0DC1004F01AF /* Housie BoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Housie BoardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C350821A8C0DC1004F01AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C350831A8C0DC1004F01AF /* Housie_BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Housie_BoardTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3C350631A8C0DC1004F01AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3C3507A1A8C0DC1004F01AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3C3505D1A8C0DC1004F01AF = {
+			isa = PBXGroup;
+			children = (
+				E3C350681A8C0DC1004F01AF /* Housie Board */,
+				E3C350801A8C0DC1004F01AF /* Housie BoardTests */,
+				E3C350671A8C0DC1004F01AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3C350671A8C0DC1004F01AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3C350661A8C0DC1004F01AF /* Housie Board.app */,
+				E3C3507D1A8C0DC1004F01AF /* Housie BoardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3C350681A8C0DC1004F01AF /* Housie Board */ = {
+			isa = PBXGroup;
+			children = (
+				E3C3506B1A8C0DC1004F01AF /* AppDelegate.swift */,
+				E3C3506D1A8C0DC1004F01AF /* FirstViewController.swift */,
+				E3C3506F1A8C0DC1004F01AF /* SecondViewController.swift */,
+				E3C350711A8C0DC1004F01AF /* Main.storyboard */,
+				E3C350741A8C0DC1004F01AF /* Images.xcassets */,
+				E3C350761A8C0DC1004F01AF /* LaunchScreen.xib */,
+				E3C350691A8C0DC1004F01AF /* Supporting Files */,
+				E31544B91A8C335F000C78EE /* HousieBoard.swift */,
+				E30C086C1AA6832100E44EF9 /* BoardCollectionCell.swift */,
+				E3C150531AD731210019262E /* ScanViewController.swift */,
+			);
+			path = "Housie Board";
+			sourceTree = "<group>";
+		};
+		E3C350691A8C0DC1004F01AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3C3506A1A8C0DC1004F01AF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3C350801A8C0DC1004F01AF /* Housie BoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3C350831A8C0DC1004F01AF /* Housie_BoardTests.swift */,
+				E3C350811A8C0DC1004F01AF /* Supporting Files */,
+			);
+			path = "Housie BoardTests";
+			sourceTree = "<group>";
+		};
+		E3C350811A8C0DC1004F01AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3C350821A8C0DC1004F01AF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3C350651A8C0DC1004F01AF /* Housie Board */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3C350871A8C0DC1004F01AF /* Build configuration list for PBXNativeTarget "Housie Board" */;
+			buildPhases = (
+				E3C350621A8C0DC1004F01AF /* Sources */,
+				E3C350631A8C0DC1004F01AF /* Frameworks */,
+				E3C350641A8C0DC1004F01AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Housie Board";
+			productName = "Housie Board";
+			productReference = E3C350661A8C0DC1004F01AF /* Housie Board.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3C3507C1A8C0DC1004F01AF /* Housie BoardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3C3508A1A8C0DC1004F01AF /* Build configuration list for PBXNativeTarget "Housie BoardTests" */;
+			buildPhases = (
+				E3C350791A8C0DC1004F01AF /* Sources */,
+				E3C3507A1A8C0DC1004F01AF /* Frameworks */,
+				E3C3507B1A8C0DC1004F01AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3C3507F1A8C0DC1004F01AF /* PBXTargetDependency */,
+			);
+			name = "Housie BoardTests";
+			productName = "Housie BoardTests";
+			productReference = E3C3507D1A8C0DC1004F01AF /* Housie BoardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3C3505E1A8C0DC1004F01AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Sathish Pottavathini";
+				TargetAttributes = {
+					E3C350651A8C0DC1004F01AF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					E3C3507C1A8C0DC1004F01AF = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = E3C350651A8C0DC1004F01AF;
+					};
+				};
+			};
+			buildConfigurationList = E3C350611A8C0DC1004F01AF /* Build configuration list for PBXProject "Housie Board" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3C3505D1A8C0DC1004F01AF;
+			productRefGroup = E3C350671A8C0DC1004F01AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3C350651A8C0DC1004F01AF /* Housie Board */,
+				E3C3507C1A8C0DC1004F01AF /* Housie BoardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3C350641A8C0DC1004F01AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C350731A8C0DC1004F01AF /* Main.storyboard in Resources */,
+				E3C350781A8C0DC1004F01AF /* LaunchScreen.xib in Resources */,
+				E3C350751A8C0DC1004F01AF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3C3507B1A8C0DC1004F01AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3C350621A8C0DC1004F01AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C350701A8C0DC1004F01AF /* SecondViewController.swift in Sources */,
+				E31544BA1A8C335F000C78EE /* HousieBoard.swift in Sources */,
+				E3C3506C1A8C0DC1004F01AF /* AppDelegate.swift in Sources */,
+				E3C3506E1A8C0DC1004F01AF /* FirstViewController.swift in Sources */,
+				E30C086D1AA6832100E44EF9 /* BoardCollectionCell.swift in Sources */,
+				E3C150541AD731210019262E /* ScanViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3C350791A8C0DC1004F01AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C350841A8C0DC1004F01AF /* Housie_BoardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3C3507F1A8C0DC1004F01AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3C350651A8C0DC1004F01AF /* Housie Board */;
+			targetProxy = E3C3507E1A8C0DC1004F01AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3C350711A8C0DC1004F01AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3C350721A8C0DC1004F01AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3C350761A8C0DC1004F01AF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3C350771A8C0DC1004F01AF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3C350851A8C0DC1004F01AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E3C350861A8C0DC1004F01AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3C350881A8C0DC1004F01AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Housie Board/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E3C350891A8C0DC1004F01AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Housie Board/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E3C3508B1A8C0DC1004F01AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Housie BoardTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Housie Board.app/Housie Board";
+			};
+			name = Debug;
+		};
+		E3C3508C1A8C0DC1004F01AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Housie BoardTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Housie Board.app/Housie Board";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3C350611A8C0DC1004F01AF /* Build configuration list for PBXProject "Housie Board" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C350851A8C0DC1004F01AF /* Debug */,
+				E3C350861A8C0DC1004F01AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3C350871A8C0DC1004F01AF /* Build configuration list for PBXNativeTarget "Housie Board" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C350881A8C0DC1004F01AF /* Debug */,
+				E3C350891A8C0DC1004F01AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3C3508A1A8C0DC1004F01AF /* Build configuration list for PBXNativeTarget "Housie BoardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C3508B1A8C0DC1004F01AF /* Debug */,
+				E3C3508C1A8C0DC1004F01AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3C3505E1A8C0DC1004F01AF /* Project object */;
+}
