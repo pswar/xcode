@@ -21,8 +21,8 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     //@IBOutlet weak var showNumberLabel: UILabel!
-    var newLabel = UILabel(frame: CGRectMake(10, 20, 120, 100))
-    var prevLabel = UILabel(frame: CGRectMake(200, 20, 120, 100))
+    var newLabel = UILabel(frame: CGRectMake(10, 18, 120, 100))
+    var prevLabel = UILabel(frame: CGRectMake(200, 18, 120, 100))
     
     var cellWidth : CGFloat = 34;
     var cellHeight : CGFloat = 34;
@@ -82,7 +82,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
 
         var index = NSIndexPath(forItem: (nextNumber-1), inSection: 0)
         
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: index) as BoardCollectionCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: index) as! BoardCollectionCell
 
         newLabel.text = "Current Number: " + String(nextNumber)
         if (prevVal != -1) {
@@ -133,7 +133,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: indexPath) as BoardCollectionCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: indexPath) as! BoardCollectionCell
         
         cell.numberLabel.text = ""
         
@@ -227,7 +227,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
             aData[num-1] = true
             return num
         }
-        //runningCount++
+
         return next()
     }
     
