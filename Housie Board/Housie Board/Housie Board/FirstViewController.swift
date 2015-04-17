@@ -13,14 +13,12 @@ import AVFoundation
 class FirstViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
     
     var totCount : Int = 99
-    //@NSManaged var aData:[Bool];// = Array(count: 99, repeatedValue: false)
     var aData:[Bool] = Array(count: 99, repeatedValue: false)
     var prevVal: Int = -1;
     var runningCount = 0;
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //@IBOutlet weak var showNumberLabel: UILabel!
     var newLabel = UILabel(frame: CGRectMake(10, 18, 120, 100))
     var prevLabel = UILabel(frame: CGRectMake(200, 18, 120, 100))
     
@@ -36,8 +34,6 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         
         self.view.addSubview(newLabel)
         self.view.addSubview(prevLabel)
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,17 +60,12 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     }
     
     @IBAction func updateCell(sender: AnyObject) {
-        
-        //readMe("")
         var nextNumber : Int = next()
         
-        //println("Number: " + String(nextNumber));
         if (nextNumber == -1) {
-            //AudioServicesPlayAlertSound(SystemSoundID(kAudioServicesPropertyIsUISound))
             prevLabel.text = ""
             newLabel.text = "Game over!"
             newLabel.textColor = UIColor.redColor()
-            //readMe("Sathish Pottavathini")
             readMe("Game over.");
             
             return;
@@ -91,6 +82,12 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         prevVal = nextNumber
 
         collectionView.reloadData()
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if (event.subtype == UIEventSubtype.MotionShake) {
+            updateCell(self)
+        }
     }
    
     @IBAction func resetGame(sender: AnyObject) {
@@ -188,11 +185,6 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        /*if UIDevice.currentDevice().orientation.isLandscape.boolValue {
-            println("landscape")
-        } else {
-            println("portraight")
-        }*/
         calcCellSize()
         collectionView.reloadData()
         
