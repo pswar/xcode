@@ -8,6 +8,9 @@
 
 import UIKit
 import AVFoundation
+import CoreMedia
+//import ZBarSDK
+
 //import AudioToolbox
 
 class FirstViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
@@ -49,8 +52,8 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     
     func calcCellSize() {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        var screenWidth : CGFloat = screenSize.width;
-        var screenHeight : CGFloat = screenSize.height;
+        let screenWidth : CGFloat = screenSize.width;
+        let screenHeight : CGFloat = screenSize.height;
         
         cellWidth = (screenWidth * 0.9)/10;
         cellHeight = (screenWidth * 0.9)/10;
@@ -60,7 +63,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     }
     
     @IBAction func updateCell(sender: AnyObject) {
-        var nextNumber : Int = next()
+        let nextNumber : Int = next()
         
         if (nextNumber == -1) {
             prevLabel.text = ""
@@ -71,9 +74,9 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
             return;
         }
 
-        var index = NSIndexPath(forItem: (nextNumber-1), inSection: 0)
+        //let _ex = NSIndexPath(forItem: (nextNumber-1), inSection: 0)
         
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: index) as! BoardCollectionCell
+        //var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: index) as! BoardCollectionCell
 
         newLabel.text = "Current Number: " + String(nextNumber)
         if (prevVal != -1) {
@@ -84,21 +87,21 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         collectionView.reloadData()
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
-        if (event.subtype == UIEventSubtype.MotionShake) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if (event!.subtype == UIEventSubtype.MotionShake) {
             updateCell(self)
         }
     }
    
     @IBAction func resetGame(sender: AnyObject) {
         
-        var resetAlert = UIAlertController(title: "Restart the game?", message: "Game in progress would be reset.", preferredStyle: UIAlertControllerStyle.Alert)
+        let resetAlert = UIAlertController(title: "Restart the game?", message: "Game in progress would be reset.", preferredStyle: UIAlertControllerStyle.Alert)
         
-        resetAlert.addAction(UIAlertAction(title: "Continue", style: .Destructive, handler: { (action: UIAlertAction!) in
+        resetAlert.addAction(UIAlertAction(title: "Continue", style: .Destructive, handler: { (action: UIAlertAction) in
             self.resetData()
         }))
         
-        resetAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+        resetAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction) in
             //println("Handle Cancel Logic here")
         }))
         
@@ -106,7 +109,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         
     }
     
-    @IBAction func repeat(sender: AnyObject) {
+    @IBAction func `repeat`(sender: AnyObject) {
         var str : String = ""
         if (newLabel.text != nil && newLabel.text != "") {
             str += newLabel.text!
@@ -130,11 +133,11 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: indexPath) as! BoardCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BoardCollectionCell", forIndexPath: indexPath) as! BoardCollectionCell
         
         cell.numberLabel.text = ""
         
-        var row : Int = indexPath.row
+        let row : Int = indexPath.row
         if (row == 99) {
             cell.backgroundColor = UIColor.grayColor()
             cell.numberLabel.textColor = UIColor.whiteColor()
@@ -144,7 +147,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
             cell.numberLabel.textColor = UIColor.blackColor()
         }
         
-        var show = aData[row]
+        let show = aData[row]
         
         if (show) {
             cell.numberLabel.text = String(row+1)
@@ -213,7 +216,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
             return -1
         }
 
-        var num = Int(arc4random_uniform(99) + 1);
+        let num = Int(arc4random_uniform(99) + 1);
         if (num <= totCount && !aData[num-1]) {
             runningCount++
             aData[num-1] = true
@@ -232,7 +235,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     }
     
     func UIColorFromRGB(colorCode: String, alpha: Float = 1.0) -> UIColor {
-        var scanner = NSScanner(string:colorCode)
+        let scanner = NSScanner(string:colorCode)
         var color:UInt32 = 0;
         scanner.scanHexInt(&color)
         
@@ -242,6 +245,25 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         let b = CGFloat(Float(Int(color) & mask)/255.0)
         
         return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
+    }
+    
+    @IBAction func scanTicketBarcode(sender: AnyObject) {
+        /*let reader : ZBarReaderController = ZBarReaderController
+        reader.readerDelegate = self;
+        
+        //... code to get image
+        
+        CGImageRef imgCG = image.CGImage;
+        
+        
+        id<NSFastEnumeration> results = [reader scanImage:imgCG];
+        ZBarSymbol *symbol = nil;
+        
+        for(symbol in results)
+        // EXAMPLE: just grab the first barcode
+        break;
+        resultText.text = symbol.data;*/
+        
     }
 
  }
