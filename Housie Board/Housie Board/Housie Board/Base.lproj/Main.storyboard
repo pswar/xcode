@@ -27,7 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="repeat:" destination="9pv-A4-QxB" eventType="touchUpInside" id="SgU-Wq-T5H"/>
+                                    <action selector="repeatLastNumber:" destination="9pv-A4-QxB" eventType="touchDown" id="lwp-p7-g4t"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="djt-Nx-8JY">

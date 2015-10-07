@@ -44,23 +44,23 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             switch (indexPath.row) {
             case 0:
                 perc = getDouble(textQ5.text);
-                txt = "Quick5:  \(toMoney(perc * tot * 0.01))"
+                txt += "①  Quick5:  \(toMoney(perc * tot * 0.01))"
                 break;
             case 1:
                 perc = getDouble(textR1.text);
-                txt = "Row 1:  \(toMoney(perc * tot * 0.01))"
+                txt += "②  Row 1:  \(toMoney(perc * tot * 0.01))"
                 break;
             case 2:
                 perc = getDouble(textR2.text);
-                txt = "Row 2:  \(toMoney(perc * tot * 0.01))"
+                txt += "③  Row 2:  \(toMoney(perc * tot * 0.01))"
                 break;
             case 3:
                 perc = getDouble(textR3.text);
-                txt = "Row 3:  \(toMoney(perc * tot * 0.01))"
+                txt += "④  Row 3:  \(toMoney(perc * tot * 0.01))"
                 break;
             case 4:
                 perc = getDouble(textFull.text);
-                txt = "Full House:  \(toMoney(perc * tot * 0.01))"
+                txt += "⑤  Full House:  \(toMoney(perc * tot * 0.01))"
                 break;
             default:
                 txt = "-"
@@ -105,5 +105,50 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
     }
+    
+    var tableData = [];
+    func searchItunesFor(searchTerm: String) {
+        // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
+        let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        
+        // Now escape anything else that isn't URL-friendly
+        //if let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding) {
+        if let escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet()) {
+            let urlPath = "http://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+            let url = NSURL(string: urlPath)
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
+                self.println("Task completed")
+                if(error != nil) {
+                    // If there is an error in the web request, print it to the console
+                    self.println(error!.localizedDescription)
+                }
+                
+                do {
+                    if let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                        
+                        if let results: NSArray = jsonResult["results"] as? NSArray {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.tableData = results
+                                self.tableView!.reloadData()
+                            })
+                        }
+                    }
+                    
+                } catch let error as NSError? {
+                    self.println("ERROR JSON: \(error?.description)")
+                }
+            })
+            
+            // The task is just an object with all these properties set
+            // In order to actually make the web request, we need to "resume"
+            task.resume()
+        }
+    }
+    
+    func println(str: String) -> Void {
+        NSLog("@[\(NSDate())] \(str)");
+    }
+    
 }
 

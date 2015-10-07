@@ -109,7 +109,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         
     }
     
-    @IBAction func `repeat`(sender: AnyObject) {
+    @IBAction func repeatLastNumber(sender: AnyObject) {
         var str : String = ""
         if (newLabel.text != nil && newLabel.text != "") {
             str += newLabel.text!
@@ -175,6 +175,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         let synth = AVSpeechSynthesizer()
         let myUtterance = AVSpeechUtterance(string: str)
         myUtterance.rate = 0.03
+        //myUtterance.voice = AVSpeechSynthesisVoice(voiceWithLanguage: "en-US")
         synth.speakUtterance(myUtterance)
     }
     
