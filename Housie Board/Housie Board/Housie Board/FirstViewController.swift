@@ -21,22 +21,35 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     var runningCount = 0;
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var resetBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
     
     var newLabel = UILabel(frame: CGRectMake(10, 18, 120, 100))
     var prevLabel = UILabel(frame: CGRectMake(200, 18, 120, 100))
     
-    var cellWidth : CGFloat = 34;
-    var cellHeight : CGFloat = 34;
+    var cellWidth : CGFloat = 32;
+    var cellHeight : CGFloat = 32;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initData();
+        calcCellSize();
         newLabel.adjustsFontSizeToFitWidth = true
         prevLabel.adjustsFontSizeToFitWidth = true
         
         self.view.addSubview(newLabel)
         self.view.addSubview(prevLabel)
+        
+        /*
+        let button   = UIButton(type: UIButtonType.System) as UIButton
+        button.frame = CGRectMake(10, 80 + cellHeight*11, 100, 30)
+        button.backgroundColor = UIColor.greenColor()
+        button.setTitle("Reset", forState: UIControlState.Normal)
+        button.addTarget(self, action: "resetGame:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(button)
+        */
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,6 +57,10 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         // Dispose of any resources that can be recreated.
     }
 
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
     func initData() {
         aData = Array(count: 99, repeatedValue: false)
         prevVal = -1;
@@ -58,8 +75,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         cellWidth = (screenWidth * 0.9)/10;
         cellHeight = (screenWidth * 0.9)/10;
         
-        collectionView.sizeThatFits(CGSizeMake(screenWidth-2, screenHeight-2))
-        
+        collectionView.sizeThatFits(CGSizeMake(screenWidth-2, screenHeight-2));
     }
     
     @IBAction func updateCell(sender: AnyObject) {
@@ -169,6 +185,12 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
         return cell
         
     }
+
+    /* func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+        return CGSize(width: cellWidth , height: cellHeight)
+    } */
+    
     
     func readMe(str : String) {
         //Read it
@@ -190,8 +212,7 @@ class FirstViewController: UIViewController , UICollectionViewDataSource, UIColl
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         calcCellSize()
-        collectionView.reloadData()
-        
+        //collectionView.reloadData()
     }
     
     /*

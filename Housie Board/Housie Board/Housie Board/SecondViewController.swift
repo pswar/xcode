@@ -28,6 +28,10 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5;
@@ -106,8 +110,32 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         return UIColor(red: r, green: g, blue: b, alpha: CGFloat(alpha))
     }
     
-    var tableData = [];
+    
+    //**** Search functionality ****
+    //@IBOutlet weak var txtSearch: UITextField!
+    //@IBOutlet weak var tableResults: UITableView!
+    var tableData: NSArray = [];
+    
+    /*@IBAction func searchFor(sender: AnyObject) {
+        searchItunesFor(txtSearch.text!);
+        tableResults.reloadData();
+    }*/
+    
+    /*class MyClass1 : UITableViewDataSource {
+        @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 5;
+        }
+        
+        @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell_\(indexPath.row)");
+            
+            return cell
+        }
+        
+    }*/
+    
     func searchItunesFor(searchTerm: String) {
+        //tableResults.dataSource = iTunesData();
         // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
         let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
@@ -130,7 +158,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                         if let results: NSArray = jsonResult["results"] as? NSArray {
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.tableData = results
-                                self.tableView!.reloadData()
+                                //self.tableResults!.reloadData()
+                                
+                                self.println(results[0].description);
                             })
                         }
                     }
